@@ -1,0 +1,121 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://MainScreen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/backarrow.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/audioheader.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/blackLine.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/settingsHeader.png" type="Texture" id=5]
+[ext_resource path="res://Settings.gd" type="Script" id=6]
+[ext_resource path="res://Sprites/videoheader.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/notifs.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/otherheader.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/ads.png" type="Texture" id=10]
+
+[node name="Settings" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 6.0
+margin_bottom = 6.0
+script = ExtResource( 6 )
+
+[node name="MainScreen" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2, 0 )
+
+[node name="BlackLine" type="Sprite" parent="."]
+position = Vector2( 344, 306 )
+scale = Vector2( 0.82875, 1 )
+texture = ExtResource( 4 )
+
+[node name="BlackLine2" type="Sprite" parent="."]
+position = Vector2( 346, 613 )
+scale = Vector2( 0.82875, 1 )
+texture = ExtResource( 4 )
+
+[node name="BlackLine3" type="Sprite" parent="."]
+position = Vector2( 349, 959 )
+scale = Vector2( 0.82875, 1 )
+texture = ExtResource( 4 )
+
+[node name="Audioheader" type="Sprite" parent="."]
+position = Vector2( 350, 225 )
+scale = Vector2( 0.82875, 1 )
+texture = ExtResource( 3 )
+
+[node name="SettingsHeader" type="Sprite" parent="."]
+position = Vector2( 399, 74 )
+scale = Vector2( 0.911498, 0.918367 )
+texture = ExtResource( 5 )
+
+[node name="HSlider" type="HSlider" parent="."]
+margin_left = 40.0
+margin_top = 303.0
+margin_right = 196.0
+margin_bottom = 344.0
+grow_vertical = 2
+rect_scale = Vector2( 4, 4 )
+size_flags_vertical = 3
+min_value = -30.0
+max_value = 0.0
+rounded = true
+
+[node name="HSlider2" type="HSlider" parent="."]
+margin_left = 43.0
+margin_top = 631.0
+margin_right = 199.0
+margin_bottom = 672.0
+grow_vertical = 2
+rect_scale = Vector2( 4, 4 )
+size_flags_vertical = 3
+rounded = true
+
+[node name="Button" type="Button" parent="."]
+margin_left = 11.0
+margin_top = 31.0
+margin_right = 95.0
+margin_bottom = 114.0
+flat = true
+
+[node name="Backarrow" type="Sprite" parent="Button"]
+position = Vector2( 39, 40 )
+scale = Vector2( 0.100625, 0.113125 )
+texture = ExtResource( 2 )
+
+[node name="Videoheader" type="Sprite" parent="."]
+position = Vector2( 313, 532 )
+scale = Vector2( 0.986441, 0.96 )
+texture = ExtResource( 7 )
+
+[node name="Otherheader" type="Sprite" parent="."]
+position = Vector2( 321, 858 )
+scale = Vector2( 0.986441, 0.9025 )
+texture = ExtResource( 9 )
+
+[node name="Notifs" type="Sprite" parent="."]
+position = Vector2( 311, 1051 )
+texture = ExtResource( 8 )
+
+[node name="CheckButton" type="CheckButton" parent="."]
+margin_left = 551.0
+margin_top = 1006.0
+margin_right = 627.0
+margin_bottom = 1046.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="CheckButton2" type="CheckButton" parent="."]
+margin_left = 551.0
+margin_top = 1095.0
+margin_right = 627.0
+margin_bottom = 1135.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="Ads" type="Sprite" parent="."]
+position = Vector2( 225, 1134 )
+texture = ExtResource( 10 )
+
+[node name="BlackLine4" type="Sprite" parent="."]
+position = Vector2( 350, 137.75 )
+scale = Vector2( 1, 0.681818 )
+texture = ExtResource( 4 )
+
+[connection signal="value_changed" from="HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
